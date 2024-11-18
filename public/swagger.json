@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Your API Title",
+    "version": "1.0.0",
+    "description": "A description of your API."
+  },
+  "paths": {
+    "/hello_world": {
+      "post": {
+        "summary": "Process a message",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "message": {
+                    "type": "string",
+                    "example": "Hello, world!"
+                  }
+                },
+                "required": ["message"]
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "response": {
+                        "type": "string",
+                        "example": "Response message"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Invalid request",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "error": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/centroid": {
+      "get": {
+        "summary": "Get centroid for a place",
+        "parameters": [
+          {
+            "name": "placeName",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "New York"
+            },
+            "description": "The name of the place to query the centroid for."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with centroid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  type: "object",
+                  properties: {
+                    latitude: {
+                      type: "number",
+                      example: 40.7128
+                    },
+                    longitude: {
+                      type: "number",
+                      example: -74.0060
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid placeName",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid placeName"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string",
+                      "example": "Internal Server Error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
