@@ -1,6 +1,6 @@
 # Next.js Project
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). The project includes integrations with **DuckDB**, **deck.gl**, **LLMs (Large Language Models)**, and **Titiler Element 84 FCC**.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). The project includes integrations with **DuckDB**, **deck.gl** and **Titiler Element 84 FCC**.
 
 ## Getting Started
 
